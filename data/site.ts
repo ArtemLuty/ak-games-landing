@@ -2,6 +2,7 @@ export type ProjectStatus =
   | "In Development"
   | "Released"
   | "Released / Prototype"
+  | "Waiting for Review"
   | "Prototype"
   | "Concept / Prototype"
   | "Utility App";
@@ -67,17 +68,17 @@ export const projects: Project[] = [
     accent: "from-sky-500/30 to-cyan-400/15",
   },
   {
-    slug: "snake-classique",
-    title: "Snake Classique",
+    slug: "snake-reflex",
+    title: "Snake Reflex",
     description:
-      "A retro-style Snake experience inspired by classic mobile games, rebuilt with modern touch controls and minimalist visuals.",
-    status: "Released / Prototype",
-    tech: ["Flutter", "Dart", "Game Loop", "Touch Controls"],
+      "A skill-based Snake game built around progressive difficulty, live global leaderboards, daily challenges, and a clean minimal interface where reflexes matter more than grind.",
+    status: "Waiting for Review",
+    tech: ["Flutter", "Dart", "Firebase", "Leaderboards", "Offline Gameplay"],
     links: {
-      appStore: "https://apps.apple.com/",
+      appStore: "https://apps.apple.com/us/developer/artem-kolesnikov/id1864616987",
       googlePlay: "https://play.google.com/store",
       github: "https://github.com/",
-      learnMore: "/projects#snake-classique",
+      learnMore: "/projects#snake-reflex",
     },
     accent: "from-emerald-500/30 to-lime-400/15",
   },
