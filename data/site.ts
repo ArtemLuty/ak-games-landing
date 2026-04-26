@@ -53,27 +53,12 @@ export const featuredProject = {
   tech: ["Flutter", "Dart", "REST APIs", "Audio Streaming", "State Management"],
   links: {
     learnMore: "/projects#freedom-player",
-    github: contactDetails.github,
+    github: "https://github.com/ArtemLuty/free_music_plauer",
     contact: "/contact",
   },
 };
 
 export const projects: Project[] = [
-  {
-    slug: "wordie",
-    title: "Wordie",
-    description:
-      "A released casual word game built around simple gameplay, clean presentation, and replayable sessions that feel easy to pick up.",
-    status: "Released",
-    tech: ["Flutter", "Dart", "Game Logic", "App Store Deployment"],
-    links: {
-      appStore: "https://apps.apple.com/",
-      googlePlay: "https://play.google.com/store",
-      github: contactDetails.github,
-      learnMore: "/projects#wordie",
-    },
-    accent: "from-sky-500/30 to-cyan-400/15",
-  },
   {
     slug: "snake-reflex",
     title: "Snake Reflex",
@@ -84,7 +69,7 @@ export const projects: Project[] = [
     links: {
       appStore: contactDetails.appStoreDeveloper,
       googlePlay: "https://play.google.com/store",
-      github: contactDetails.github,
+      github: "https://github.com/ArtemLuty/snake_classic",
       learnMore: "/projects#snake-reflex",
     },
     accent: "from-emerald-500/30 to-lime-400/15",
@@ -133,6 +118,21 @@ export const projects: Project[] = [
       learnMore: "/projects#dog-whistle",
     },
     accent: "from-rose-500/30 to-pink-400/15",
+  },
+  {
+    slug: "wordie",
+    title: "Wordie",
+    description:
+      "A casual word game currently in development, focused on simple gameplay, clean visual rhythm, and replayable vocabulary-driven sessions.",
+    status: "In Development",
+    tech: ["Flutter", "Dart", "Game Logic", "Word Mechanics"],
+    links: {
+      appStore: "https://apps.apple.com/",
+      googlePlay: "https://play.google.com/store",
+      github: contactDetails.github,
+      learnMore: "/projects#wordie",
+    },
+    accent: "from-sky-500/30 to-cyan-400/15",
   },
 ];
 
