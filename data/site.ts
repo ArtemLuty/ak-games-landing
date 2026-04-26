@@ -83,13 +83,13 @@ export const projects: Project[] = [
   },
   {
     slug: "tab-dodge",
-    title: "Tab Dodge",
+    title: "Tap Dodge: Reflex",
     description:
-      "A fast reaction arcade prototype where the player avoids incoming obstacles and survives for as long as possible.",
-    status: "Prototype",
+      "A fast neon reflex arcade game built around one-tap lane switching, falling obstacle waves, escalating difficulty, and a clean futuristic presentation.",
+    status: "Released",
     tech: ["Flutter", "Dart", "Animations", "Game Logic"],
     links: {
-      appStore: "https://apps.apple.com/",
+      appStore: "https://apps.apple.com/us/app/tap-dodge-reflex/id6757133605",
       googlePlay: "https://play.google.com/store",
       github: "https://github.com/",
       learnMore: "/projects#tab-dodge",
@@ -97,17 +97,17 @@ export const projects: Project[] = [
     accent: "from-violet-500/30 to-fuchsia-400/15",
   },
   {
-    slug: "either-lexicon",
-    title: "Either Lexicon",
+    slug: "aether-lexicon",
+    title: "Aether Lexicon",
     description:
-      "An experimental word and choice-based concept focused on vocabulary, decisions, and concise interactive mechanics.",
-    status: "Concept / Prototype",
+      "A futuristic word puzzle game focused on vocabulary, logic, progressive challenge, and a calm modern interface with offline play support.",
+    status: "Released",
     tech: ["Flutter", "Dart", "Local Data", "Game Mechanics"],
     links: {
-      appStore: "https://apps.apple.com/",
+      appStore: "https://apps.apple.com/us/app/aether-lexicon/id6761136022",
       googlePlay: "https://play.google.com/store",
       github: "https://github.com/",
-      learnMore: "/projects#either-lexicon",
+      learnMore: "/projects#aether-lexicon",
     },
     accent: "from-amber-500/30 to-orange-400/15",
   },
@@ -153,5 +153,5 @@ export const principles = [
 export const socialLinks = [
   { label: "GitHub", href: "https://github.com/" },
   { label: "LinkedIn", href: "https://www.linkedin.com/" },
-  { label: "App Store", href: "https://apps.apple.com/" },
+  { label: "App Store", href: "https://apps.apple.com/us/developer/artem-kolesnikov/id1864616987" },
 ];
