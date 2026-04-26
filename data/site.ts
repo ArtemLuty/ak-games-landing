@@ -29,6 +29,13 @@ export const navigation = [
   { label: "Contact", href: "/contact" },
 ];
 
+export const contactDetails = {
+  email: "temofy@gmail.com",
+  linkedin: "https://www.linkedin.com/in/artem-kolesnikov-49690ab6/",
+  github: "https://github.com/ArtemLuty",
+  appStoreDeveloper: "https://apps.apple.com/us/developer/artem-kolesnikov/id1864616987",
+};
+
 export const featuredProject = {
   title: "Freedom Player",
   status: "In Development",
@@ -46,7 +53,7 @@ export const featuredProject = {
   tech: ["Flutter", "Dart", "REST APIs", "Audio Streaming", "State Management"],
   links: {
     learnMore: "/projects#freedom-player",
-    github: "https://github.com/",
+    github: contactDetails.github,
     contact: "/contact",
   },
 };
@@ -62,7 +69,7 @@ export const projects: Project[] = [
     links: {
       appStore: "https://apps.apple.com/",
       googlePlay: "https://play.google.com/store",
-      github: "https://github.com/",
+      github: contactDetails.github,
       learnMore: "/projects#wordie",
     },
     accent: "from-sky-500/30 to-cyan-400/15",
@@ -75,9 +82,9 @@ export const projects: Project[] = [
     status: "Waiting for Review",
     tech: ["Flutter", "Dart", "Firebase", "Leaderboards", "Offline Gameplay"],
     links: {
-      appStore: "https://apps.apple.com/us/developer/artem-kolesnikov/id1864616987",
+      appStore: contactDetails.appStoreDeveloper,
       googlePlay: "https://play.google.com/store",
-      github: "https://github.com/",
+      github: contactDetails.github,
       learnMore: "/projects#snake-reflex",
     },
     accent: "from-emerald-500/30 to-lime-400/15",
@@ -92,7 +99,7 @@ export const projects: Project[] = [
     links: {
       appStore: "https://apps.apple.com/us/app/tap-dodge-reflex/id6757133605",
       googlePlay: "https://play.google.com/store",
-      github: "https://github.com/",
+      github: contactDetails.github,
       learnMore: "/projects#tab-dodge",
     },
     accent: "from-violet-500/30 to-fuchsia-400/15",
@@ -107,7 +114,7 @@ export const projects: Project[] = [
     links: {
       appStore: "https://apps.apple.com/us/app/aether-lexicon/id6761136022",
       googlePlay: "https://play.google.com/store",
-      github: "https://github.com/",
+      github: contactDetails.github,
       learnMore: "/projects#aether-lexicon",
     },
     accent: "from-amber-500/30 to-orange-400/15",
@@ -122,7 +129,7 @@ export const projects: Project[] = [
     links: {
       appStore: "https://apps.apple.com/",
       googlePlay: "https://play.google.com/store",
-      github: "https://github.com/",
+      github: contactDetails.github,
       learnMore: "/projects#dog-whistle",
     },
     accent: "from-rose-500/30 to-pink-400/15",
@@ -152,7 +159,7 @@ export const principles = [
 ];
 
 export const socialLinks = [
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/" },
-  { label: "App Store", href: "https://apps.apple.com/us/developer/artem-kolesnikov/id1864616987" },
+  { label: "GitHub", href: contactDetails.github },
+  { label: "LinkedIn", href: contactDetails.linkedin },
+  { label: "App Store", href: contactDetails.appStoreDeveloper },
 ];

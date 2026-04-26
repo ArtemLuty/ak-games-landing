@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { socialLinks } from "@/data/site";
+import { contactDetails, socialLinks } from "@/data/site";
 
 const footerLinks = [
   { label: "Projects", href: "/projects" },
@@ -18,6 +18,12 @@ export function SiteFooter() {
             Indie mobile apps and games crafted with precision, built for people who value speed,
             clarity, and thoughtful execution.
           </p>
+          <Link
+            href={`mailto:${contactDetails.email}`}
+            className="mt-3 inline-block text-sm text-slate-300 transition hover:text-white"
+          >
+            {contactDetails.email}
+          </Link>
         </div>
         <div className="flex flex-wrap gap-4 text-sm text-slate-300">
           {footerLinks.map((item) => (

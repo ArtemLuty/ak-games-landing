@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { contactDetails } from "@/data/site";
+
 export const metadata: Metadata = {
   title: "Contact | AK Games",
   description: "Start a conversation with AK Games about Flutter apps, games, MVPs, and collaborations.",
@@ -30,20 +32,24 @@ export default function ContactPage() {
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                href="mailto:hello@akgames.dev"
+                href={`mailto:${contactDetails.email}`}
                 className="rounded-full bg-white px-6 py-3 text-sm font-medium text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
               >
-                hello@akgames.dev
+                {contactDetails.email}
               </Link>
               <Link
-                href="https://github.com/"
+                href={contactDetails.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full border border-white/12 bg-white/6 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"
               >
-                GitHub Profile
+                LinkedIn Profile
               </Link>
             </div>
+            <p className="mt-5 text-sm leading-7 text-slate-400">
+              Email is the fastest way to reach AK Games for product work, startup collaboration,
+              and Flutter development inquiries.
+            </p>
           </section>
 
           <section className="glass-panel p-8 sm:p-10">
@@ -64,6 +70,27 @@ export default function ContactPage() {
                 New app ideas, feature MVPs, prototypes for fundraising, mobile game experiments,
                 or product cleanups that need stronger UX and faster execution.
               </p>
+            </div>
+            <div className="mt-4 rounded-[24px] border border-white/10 bg-black/20 p-5">
+              <p className="text-sm font-medium text-white">Direct links</p>
+              <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                <Link
+                  href={contactDetails.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:bg-white/10"
+                >
+                  GitHub
+                </Link>
+                <Link
+                  href={contactDetails.appStoreDeveloper}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:bg-white/10"
+                >
+                  App Store
+                </Link>
+              </div>
             </div>
           </section>
         </div>
