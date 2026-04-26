@@ -10,7 +10,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article
       id={project.slug}
-      className="group glass-panel relative overflow-hidden p-6 transition duration-300 hover:-translate-y-1.5 hover:border-white/16 hover:bg-white/[0.07]"
+      className="group glass-panel mesh-panel relative overflow-hidden p-6 transition duration-300 hover:-translate-y-1.5 hover:border-white/16 hover:bg-white/[0.07]"
     >
       <div
         className={`absolute inset-x-0 top-0 h-28 bg-gradient-to-br ${project.accent} opacity-70 blur-2xl transition duration-300 group-hover:opacity-100`}
@@ -27,11 +27,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
             <div>
               <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-              <span className="mt-2 inline-flex rounded-full border border-white/10 bg-white/8 px-3 py-1 text-xs font-medium text-slate-200">
+              <span className="surface-label mt-2">
                 {project.status}
               </span>
             </div>
           </div>
+          <Link
+            href={project.links.github}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-slate-300 transition hover:bg-white/10 hover:text-white"
+          >
+            Open Repo
+          </Link>
         </div>
         <p className="mt-6 text-sm leading-7 text-slate-300">{project.description}</p>
         <div className="mt-6 flex flex-wrap gap-2">
