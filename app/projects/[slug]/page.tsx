@@ -6,6 +6,7 @@ import { asset, projects, siteUrl } from "@/data/site";
 import { ProjectArt } from "@/components/project-art";
 import { Arrow } from "@/components/icons";
 import { CollaborationCTA } from "@/components/collaboration-cta";
+import { GameplayVideo } from "@/components/gameplay-video";
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
@@ -80,6 +81,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             )}
           </div>
         </div>
+        {p.releaseNote && (
+          <p
+            className={`release-note ${p.status === "Live in clinics" ? "live-note" : ""}`}
+          >
+            <span className="availability-dot" />
+            {p.releaseNote}
+          </p>
+        )}
         <div className="detail-art">
           <ProjectArt project={p} priority />
         </div>
@@ -117,13 +126,34 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </ul>
         </div>
       </section>
+      {p.video && (
+        <section
+          className="container-shell detail-gameplay"
+          aria-labelledby="detail-gameplay-heading"
+        >
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">SEE IT IN MOTION</p>
+              <h2 id="detail-gameplay-heading">A moment in this world.</h2>
+            </div>
+            <span className="eyebrow">
+              {p.slug === "ashveil"
+                ? "DEVELOPMENT FOOTAGE"
+                : "GAMEPLAY EXCERPT"}
+            </span>
+          </div>
+          <GameplayVideo key={p.slug} project={p} />
+        </section>
+      )}
       {p.screenshots && (
         <section className="container-shell screenshots-section">
           <p className="eyebrow">
             A CLOSER LOOK /{" "}
             {p.status === "Released"
               ? "APP STORE SCREENSHOTS"
-              : "DEVELOPMENT BUILD"}
+              : p.slug === "hollow"
+                ? "GAMEPLAY SCREENSHOTS"
+                : "DEVELOPMENT BUILD"}
           </p>
           <div
             className={`screenshot-gallery ${p.visual === "phones" ? "portrait-gallery" : ""}`}

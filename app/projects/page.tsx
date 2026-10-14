@@ -4,7 +4,7 @@ import { CollaborationCTA } from "@/components/collaboration-cta";
 export const metadata: Metadata = {
   title: "Selected work",
   description:
-    "Explore independent apps, games and product prototypes by Artem Kolesnikov. Five published iOS apps, original game worlds and practical tools.",
+    "Explore independent apps, games and software by Artem Kolesnikov. Four published iOS apps, a live clinical product and original game worlds.",
   alternates: { canonical: "/projects/" },
 };
 export default function ProjectsPage() {
@@ -18,7 +18,7 @@ export default function ProjectsPage() {
           <span className="muted">Built with purpose.</span>
         </h1>
         <p>
-          Published apps, playable worlds, and ideas taking shape.
+          Published apps, software in daily use, and worlds coming to life.
           <br />A closer look at what I make and how I think.
         </p>
       </section>

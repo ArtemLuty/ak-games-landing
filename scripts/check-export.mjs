@@ -24,7 +24,9 @@ const missing = new Set();
 let checked = 0;
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
-  for (const match of html.matchAll(/(?:href|src)="(\/[^"#?]*)(?:[^\"]*)"/g)) {
+  for (const match of html.matchAll(
+    /(?:href|src|poster)="(\/[^"#?]*)(?:[^\"]*)"/g,
+  )) {
     const url = match[1];
     if (url.startsWith("//")) continue;
     if (prefix && !url.startsWith(`${prefix}/`) && url !== prefix) {

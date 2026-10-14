@@ -12,7 +12,12 @@ export type Project = {
   slug: string;
   title: string;
   category: "App" | "Game" | "Product";
-  status: "Released" | "In development" | "Playable beta" | "Prototype";
+  status:
+    | "Released"
+    | "In development"
+    | "Release preparation"
+    | "Live in clinics";
+  releaseNote?: string;
   tagline: string;
   description: string;
   overview: string;
@@ -24,42 +29,23 @@ export type Project = {
   image?: string;
   icon?: string;
   screenshots?: string[];
+  video?: { src: string; poster: string; caption: string; description: string };
   visual?: "phones" | "workflow" | "audio";
 };
 export const projects: Project[] = [
   {
-    slug: "vocabio",
-    title: "Vocabio LV",
-    category: "App",
-    status: "Released",
-    tagline: "Your words. Your way to learn.",
-    color: "lavender",
-    visual: "phones",
-    description:
-      "An English vocabulary trainer that turns your own word lists into a daily learning practice.",
-    overview:
-      "Vocabio brings five ways to practise into one focused learning experience. Create a personal vocabulary, switch between English and Ukrainian, and study offline at your own pace.",
-    tech: ["iOS", "Education", "Offline learning"],
-    features: [
-      "Flashcards, quiz, writing, scramble and mixed practice",
-      "Personal word lists with translations and examples",
-      "English and Ukrainian interface with light and dark themes",
-    ],
-    appStore: "https://apps.apple.com/us/app/vocabio-lv/id6774777047",
-    icon: "/projects/vocabio-icon.jpg",
-    screenshots: ["/projects/vocabio-1.jpg", "/projects/vocabio-2.jpg"],
-  },
-  {
     slug: "hollow",
-    title: "HOLLOW",
+    title: "HOLLOW: The Last Echo",
     category: "Game",
-    status: "Playable beta",
+    status: "Release preparation",
+    releaseNote:
+      "In App Store review · Steam release in preparation · Desktop & mobile",
     color: "forest",
     tagline: "A small keeper. A world worth saving.",
     description:
       "An atmospheric puzzle-platformer about a forest keeper and the echo they leave behind.",
     overview:
-      "Carry the forest’s last voice home through fifty authored chapters. An eight-second echo can hold a pressure stone while you move on, turning a simple ability into puzzles about timing, space and cooperation with your past self. Currently a playable beta; mobile editions are in testing.",
+      "Carry the forest’s last voice home through fifty authored chapters. An eight-second echo can hold a pressure stone while you move on, turning a simple ability into puzzles about timing, space and cooperation with your past self. The game is in its final release stage across desktop and mobile, with the App Store edition under review and the Steam release in preparation.",
     tech: ["JavaScript", "Matter.js", "Canvas", "Electron"],
     features: [
       "Fifty chapters with environmental puzzles and checkpoints",
@@ -68,19 +54,28 @@ export const projects: Project[] = [
     ],
     image: "/projects/hollow-cover.jpg",
     screenshots: ["/projects/hollow-gameplay.jpg"],
+    video: {
+      src: "/projects/hollow-gameplay.mp4",
+      poster: "/projects/hollow-video-poster.jpg",
+      caption: "Echoes, forest paths & a little ingenuity.",
+      description:
+        "A small forest keeper explores woodland paths, leaves an echo and moves crates to reach higher ground. Gameplay excerpt from HOLLOW: The Last Echo.",
+    },
   },
   {
     slug: "clinicflow",
     title: "ClinicFlow",
     category: "Product",
-    status: "Prototype",
+    status: "Live in clinics",
+    releaseNote:
+      "A complete product, already used in day-to-day clinical work.",
     color: "blue",
     visual: "workflow",
     tagline: "Less admin. More room for care.",
     description:
-      "A working practice-management MVP connecting patients, appointments, visits and payments.",
+      "Practice-management software already used in clinics, connecting patients, appointments, visits and payments.",
     overview:
-      "ClinicFlow explores the everyday workflow of a medical or dental practice. The Flutter MVP connects patient records, scheduling, performed services and balances in a shared Firebase-backed workspace. The MVP is currently being developed and tested.",
+      "ClinicFlow is a complete practice-management product, already supporting daily work in clinics. It brings patient records, scheduling, performed services, files and payments into a shared workspace, helping the team keep the whole patient journey connected. Built with Flutter and Firebase. ClinicFlow is the product’s working name.",
     tech: ["Flutter", "Firebase", "Web", "Product design"],
     features: [
       "Patient records and appointment scheduling",
@@ -187,13 +182,14 @@ export const projects: Project[] = [
     slug: "ashveil",
     title: "ASHVEIL",
     category: "Game",
-    status: "Prototype",
+    status: "In development",
+    releaseNote: "In active development · Strategy RPG",
     color: "stone",
     tagline: "Build a company. Shape a dark world.",
     description:
       "An original dark-fantasy strategy RPG with world exploration and turn-based tactical battles.",
     overview:
-      "ASHVEIL is a playable Godot prototype combining a strategic map with squad-based combat. Recruit and develop units, capture resources, explore linked chapters and lead a company through tactical encounters.",
+      "ASHVEIL is a dark-fantasy strategy RPG in active development, combining a strategic map with squad-based combat. Recruit and develop units, capture resources, explore linked chapters and lead a company through tactical encounters.",
     tech: ["Godot 4", "GDScript", "Systems design"],
     features: [
       "Strategic exploration, resource control and progression",
@@ -202,6 +198,13 @@ export const projects: Project[] = [
     ],
     image: "/projects/ashveil.jpg",
     screenshots: ["/projects/ashveil.jpg"],
+    video: {
+      src: "/projects/ashveil-gameplay.mp4",
+      poster: "/projects/ashveil-video-poster.jpg",
+      caption: "A company of your own. Every turn matters.",
+      description:
+        "Two companies face each other in the Cinder Cathedral. Units take turns attacking as the combat log records their actions. Silent footage from an ASHVEIL development build.",
+    },
   },
   {
     slug: "freedom-player",
@@ -225,9 +228,12 @@ export const projects: Project[] = [
   },
 ];
 export const releasedProjects = projects.filter((p) => p.status === "Released");
+export const isLiveProject = (p: Project) =>
+  p.status === "Released" || p.status === "Live in clinics";
+export const gameplayProjects = projects.filter((p) => p.video);
 export const selectedProjects = [
   "hollow",
-  "vocabio",
   "clinicflow",
+  "snake-reflex",
   "ashveil",
 ].map((slug) => projects.find((p) => p.slug === slug)!);

@@ -1,6 +1,6 @@
 # AK Games
 
-Independent developer portfolio for Artem Kolesnikov: released mobile apps, original games and product prototypes.
+Independent developer portfolio for Artem Kolesnikov: released mobile apps, original games and software in daily use.
 
 ## Development
 
@@ -20,10 +20,12 @@ Next.js exports static pages into `out/`. The existing GitHub Actions workflow b
 ## Content
 
 - `data/site.ts`: project details, release states, store links and contact information.
-- `public/projects/`: locally hosted product images.
+- `public/projects/`: locally hosted product images and optimized gameplay videos.
 - `docs/content-sources.md`: release verification and asset provenance.
 - `app/projects/[slug]/`: statically generated project detail pages.
 
 The catalogue provides category filtering and text search. The contact form prepares an email in the visitor’s email application; it does not imply that a message has been sent and includes a copyable draft fallback. There is no submission backend or analytics integration.
 
 The website supports keyboard navigation, visible focus states, a skip link, reduced motion, mobile navigation, route metadata, a sitemap and robots.txt. Existing privacy policy wording is retained.
+
+HOLLOW and ASHVEIL each have separate screenshots and a gameplay video, both on the homepage showcase and their own project page. Videos start muted when visible, pause offscreen, respect manual pause, and do not autoplay with reduced motion or data saving enabled. Native controls, a keyboard-accessible play/pause button and text descriptions remain available. No third-party video embed or tracking is used.

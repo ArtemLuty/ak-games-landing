@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Project } from "@/data/site";
+import { isLiveProject, type Project } from "@/data/site";
 import { ProjectArt } from "./project-art";
 import { Arrow } from "./icons";
 export function ProjectCard({ project }: { project: Project }) {
@@ -14,13 +14,13 @@ export function ProjectCard({ project }: { project: Project }) {
         <div className="project-meta">
           <span>
             {project.category === "Product"
-              ? "Product development"
+              ? "Clinical software"
               : project.category === "App"
                 ? "Mobile application"
                 : "Game development"}
           </span>
           <span
-            className={`status ${project.status === "Released" ? "released" : ""}`}
+            className={`status ${isLiveProject(project) ? "released" : ""}`}
           >
             <i />
             {project.status}

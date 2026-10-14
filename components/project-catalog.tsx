@@ -1,8 +1,14 @@
 "use client";
 import { useState } from "react";
-import { projects } from "@/data/site";
+import { projects, isLiveProject } from "@/data/site";
 import { ProjectCard } from "./project-card";
-const filters = ["All work", "Apps", "Games", "Products", "Released"] as const;
+const filters = [
+  "All work",
+  "Apps",
+  "Games",
+  "Products",
+  "Live products",
+] as const;
 export function ProjectCatalog() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("All work");
   const [query, setQuery] = useState("");
@@ -11,7 +17,7 @@ export function ProjectCatalog() {
     (f === "Apps" && p.category === "App") ||
     (f === "Games" && p.category === "Game") ||
     (f === "Products" && p.category === "Product") ||
-    (f === "Released" && p.status === "Released");
+    (f === "Live products" && isLiveProject(p));
   const visible = projects.filter(
     (p) =>
       matches(p, filter) &&
@@ -29,8 +35,7 @@ export function ProjectCatalog() {
               onClick={() => setFilter(f)}
               aria-pressed={filter === f}
             >
-              {f}
-              <span>{projects.filter((p) => matches(p, f)).length}</span>
+              {f} <span>{projects.filter((p) => matches(p, f)).length}</span>
             </button>
           ))}
         </div>

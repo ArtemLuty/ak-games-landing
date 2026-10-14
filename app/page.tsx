@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Arrow } from "@/components/icons";
 import { ProjectCard } from "@/components/project-card";
 import { CollaborationCTA } from "@/components/collaboration-cta";
+import { GameplayShowcase } from "@/components/gameplay-showcase";
 import {
   asset,
   projects,
@@ -62,8 +63,8 @@ export default function HomePage() {
             </div>
             <div className="hero-phone front-phone">
               <Image
-                src={asset("/projects/vocabio-1.jpg")}
-                alt="Vocabio LV vocabulary app on an iPhone"
+                src={asset("/projects/pupwhistle-1.jpg")}
+                alt="PupWhistle dog-training app on an iPhone"
                 width={240}
                 height={520}
                 priority
@@ -77,7 +78,7 @@ export default function HomePage() {
         </div>
         <div className="hero-foot">
           <span>DESIGN WITH INTENT. BUILD WITH CARE.</span>
-          <span>SCROLL TO EXPLORE ↓</span>
+          <a href="#gameplay">WATCH GAMEPLAY ↘</a>
         </div>
       </section>
       <section
@@ -132,10 +133,11 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <GameplayShowcase />
       <section className="studio-section" id="studio">
         <div className="container-shell studio-grid">
           <div>
-            <p className="eyebrow">02 / THE PERSON BEHIND THE PRODUCTS</p>
+            <p className="eyebrow">03 / THE PERSON BEHIND THE PRODUCTS</p>
             <h2>
               A small studio.
               <br />
@@ -152,8 +154,8 @@ export default function HomePage() {
           <div className="studio-copy">
             <p>
               I like making complex things feel simple. Sometimes that means a
-              vocabulary app you use every morning. Sometimes it means a forest
-              that remembers your footsteps.
+              tool that keeps a clinic’s day running smoothly. Sometimes it
+              means a forest that remembers your footsteps.
             </p>
             <p>
               AK Games is my independent practice. I work across product design
@@ -171,7 +173,7 @@ export default function HomePage() {
       <section className="services-section container-shell">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">03 / WHAT WE CAN BUILD</p>
+            <p className="eyebrow">04 / WHAT WE CAN BUILD</p>
             <h2>
               From “what if”
               <br />
