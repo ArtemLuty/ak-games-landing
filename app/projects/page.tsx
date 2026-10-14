@@ -11,7 +11,7 @@ export default function ProjectsPage() {
   return (
     <>
       <section className="page-intro container-shell">
-        <p className="eyebrow">THE AK GAMES PORTFOLIO</p>
+        <p className="eyebrow">THE AK STUDIO PORTFOLIO</p>
         <h1>
           Made with curiosity.
           <br />

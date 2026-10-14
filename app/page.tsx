@@ -160,7 +160,7 @@ export default function HomePage() {
               <span className="maker-avatar">ak.</span>
               <div>
                 <strong>Artem Kolesnikov</strong>
-                <span>Independent developer · AK Games</span>
+                <span>Independent developer · AK Studio</span>
               </div>
             </div>
           </div>
@@ -171,7 +171,7 @@ export default function HomePage() {
               means a forest that remembers your footsteps.
             </p>
             <p>
-              AK Games is my independent practice. I work across product design
+              AK Studio is my independent practice. I work across product design
               and development, connecting the first idea, the interface, and the
               code that brings it to life.
             </p>

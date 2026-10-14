@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="footer-top">
           <Link href="/" className="brand">
             <BrandMark />
-            <span>AK GAMES</span>
+            <span>AK STUDIO</span>
           </Link>
           <p>
             Independent by choice.
@@ -40,7 +40,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Artem Kolesnikov · AK Games</span>
+          <span>© {new Date().getFullYear()} Artem Kolesnikov · AK Studio</span>
           <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
           <Link href="/privacy">Privacy policy</Link>
           <a href="#top">Back to top ↑</a>

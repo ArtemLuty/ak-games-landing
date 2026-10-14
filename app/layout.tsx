@@ -6,17 +6,17 @@ import { asset, siteUrl } from "@/data/site";
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteUrl}/`),
   title: {
-    default: "AK Games — Thoughtful apps. Memorable play.",
-    template: "%s — AK Games",
+    default: "AK Studio — Thoughtful apps. Memorable play.",
+    template: "%s — AK Studio",
   },
   description:
     "Independent developer Artem Kolesnikov creates thoughtful mobile apps, original games and practical digital products. Explore the work and start a collaboration.",
   alternates: { canonical: `${siteUrl}/` },
   openGraph: {
-    title: "AK Games — Thoughtful apps. Memorable play.",
+    title: "AK Studio — Thoughtful apps. Memorable play.",
     description:
       "Mobile apps, original games and product development by Artem Kolesnikov.",
-    siteName: "AK Games",
+    siteName: "AK Studio",
     type: "website",
     url: siteUrl,
     images: [
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
         url: `${siteUrl}/projects/hollow-cover.jpg`,
         width: 1800,
         height: 581,
-        alt: "HOLLOW, an original game by AK Games",
+        alt: "HOLLOW, an original game by AK Studio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AK Games — Thoughtful apps. Memorable play.",
+    title: "AK Studio — Thoughtful apps. Memorable play.",
   },
   icons: { icon: asset("/favicon.svg") },
 };

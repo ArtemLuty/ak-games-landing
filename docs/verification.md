@@ -1,5 +1,12 @@
 # Portfolio update verification — October 13, 2026
 
+## AK Studio rename
+
+- Renamed the header, footer, studio introduction, catalogue, privacy branding and page/social metadata to AK Studio.
+- GitHub Pages production build and TypeScript checks passed; the export checker verified 16 HTML pages and 397 internal route/asset references.
+- Browser inspection at 320px and 1280px confirmed the longer brand fits without horizontal overflow; mobile navigation opens and closes with Escape.
+- Added a build-time canonical URL override for hosting the same static site at a root-level address.
+
 ## Build and content
 
 - Production build and TypeScript validation passed with the real GitHub Pages base path, `GITHUB_REPOSITORY=ArtemLuty/ak-games-landing`.

@@ -1,4 +1,7 @@
-export const siteUrl = "https://artemluty.github.io/ak-games-landing";
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://artemluty.github.io/ak-games-landing"
+).replace(/\/$/, "");
 export const asset = (path: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 export const contactDetails = {

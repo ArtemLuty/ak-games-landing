@@ -19,10 +19,10 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container-shell header-inner">
-        <Link href="/" aria-label="AK Games home" className="brand">
+        <Link href="/" aria-label="AK Studio home" className="brand">
           <BrandMark />
           <span>
-            AK GAMES
+            AK STUDIO
             <span className="brand-plus" aria-hidden="true">
               +
             </span>
