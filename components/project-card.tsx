@@ -10,7 +10,18 @@ export function ProjectCard({ project }: { project: Project }) {
         className="project-link"
         aria-label={`Explore ${project.title}`}
       >
-        <ProjectArt project={project} />
+        <div className="project-card-media">
+          <ProjectArt project={project} />
+          {project.status === "Live in clinics" && (
+            <span className="project-live-label">
+              <span className="availability-dot" />
+              In daily clinical use
+            </span>
+          )}
+          <span className="project-open-hint" aria-hidden="true">
+            Explore project <Arrow diagonal />
+          </span>
+        </div>
         <div className="project-meta">
           <span>
             {project.category === "Product"

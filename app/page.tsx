@@ -25,9 +25,6 @@ export default function HomePage() {
             <span className="hero-serif">Memorable</span>
             <br />
             <span className="accent">play.</span>
-            <span className="hero-asterisk" aria-hidden="true">
-              ✳
-            </span>
           </h1>
           <p className="hero-description">
             I’m Artem. I turn ideas into mobile products,
@@ -35,24 +32,25 @@ export default function HomePage() {
             getting lost in.
           </p>
           <div className="hero-actions">
-            <Link href="/projects" className="button button-primary">
+            <a href="#work" className="button button-primary">
               Explore the work <Arrow />
-            </Link>
+            </a>
             <Link href="/contact" className="text-link">
               Let’s build something <Arrow diagonal />
             </Link>
           </div>
         </div>
         <div className="hero-showcase">
-          <div className="showcase-grid" />
-          <div className="showcase-orbit" />
-          <span className="showcase-note">
-            BUILT TO BE USED.
-            <br />
-            MADE TO BE ENJOYED.
-          </span>
+          <div className="showcase-heading">
+            <span>MOBILE PRODUCTS</span>
+            <span>DESIGNED & BUILT BY ARTEM</span>
+          </div>
           <div className="hero-phones">
-            <div className="hero-phone back-phone">
+            <Link
+              href="/projects/snake-reflex"
+              className="hero-phone back-phone"
+              aria-label="Explore Snake Reflex"
+            >
               <Image
                 src={asset("/projects/snake-reflex-1.jpg")}
                 alt="Snake Reflex game on an iPhone"
@@ -60,8 +58,12 @@ export default function HomePage() {
                 height={520}
                 priority
               />
-            </div>
-            <div className="hero-phone front-phone">
+            </Link>
+            <Link
+              href="/projects/pupwhistle"
+              className="hero-phone front-phone"
+              aria-label="Explore PupWhistle"
+            >
               <Image
                 src={asset("/projects/pupwhistle-1.jpg")}
                 alt="PupWhistle dog-training app on an iPhone"
@@ -69,16 +71,27 @@ export default function HomePage() {
                 height={520}
                 priority
               />
-            </div>
+            </Link>
           </div>
           <div className="showcase-caption">
-            <span className="availability-dot" /> REAL PRODUCTS. ALREADY OUT
-            THERE.<span>↗</span>
+            <div>
+              <span className="availability-dot" />
+              Snake Reflex + PupWhistle
+            </div>
+            <span>Available on the App Store</span>
           </div>
         </div>
         <div className="hero-foot">
-          <span>DESIGN WITH INTENT. BUILD WITH CARE.</span>
-          <a href="#gameplay">WATCH GAMEPLAY ↘</a>
+          <span>
+            PRODUCT DESIGN <span aria-hidden="true">/</span> DEVELOPMENT{" "}
+            <span aria-hidden="true">/</span> INDEPENDENT GAMES
+          </span>
+          <a href="#gameplay">
+            <span className="play-outline" aria-hidden="true">
+              ▶
+            </span>{" "}
+            Watch gameplay <Arrow />
+          </a>
         </div>
       </section>
       <section
@@ -88,7 +101,7 @@ export default function HomePage() {
         <div className="release-intro">
           <strong>{String(releasedProjects.length).padStart(2, "0")}</strong>
           <span>
-            independent apps.
+            released apps.
             <br />
             Live on the App Store.
           </span>
@@ -127,7 +140,7 @@ export default function HomePage() {
             <Arrow />
           </Link>
         </div>
-        <div className="project-grid">
+        <div className="project-grid selected-grid">
           {selectedProjects.map((p) => (
             <ProjectCard key={p.slug} project={p} />
           ))}
@@ -196,14 +209,14 @@ export default function HomePage() {
             },
             {
               n: "02",
-              symbol: "✳",
+              symbol: "+",
               title: "Games & interactions",
               copy: "Distinct worlds, satisfying mechanics, and the small details that make play feel good.",
               tags: "Godot · Flutter · Canvas",
             },
             {
               n: "03",
-              symbol: "⌘",
+              symbol: "□",
               title: "MVPs & product tools",
               copy: "Turn a complex workflow into a useful first release. Build, learn, and improve with a clear direction.",
               tags: "Product design · Web · APIs",

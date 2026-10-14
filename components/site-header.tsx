@@ -22,7 +22,10 @@ export function SiteHeader() {
         <Link href="/" aria-label="AK Games home" className="brand">
           <BrandMark />
           <span>
-            AK GAMES<span className="brand-dot">✳</span>
+            AK GAMES
+            <span className="brand-plus" aria-hidden="true">
+              +
+            </span>
           </span>
         </Link>
         <button

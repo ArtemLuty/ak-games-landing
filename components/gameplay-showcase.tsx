@@ -32,9 +32,8 @@ export function GameplayShowcase() {
                 <h3>{project.title}</h3>
                 <Arrow diagonal />
               </Link>
-              <span className="status">
-                <i />
-                {project.status}
+              <span className="gameplay-label">
+                <span aria-hidden="true">▶</span> Gameplay
               </span>
             </div>
             <GameplayVideo project={project} />
