@@ -7,6 +7,15 @@
 - Browser inspection at 320px and 1280px confirmed the longer brand fits without horizontal overflow; mobile navigation opens and closes with Escape.
 - Added a build-time canonical URL override for hosting the same static site at a root-level address.
 
+## Cloudflare Pages publication
+
+- Primary URL: https://ak-studio-artem.pages.dev/ (project `ak-studio-artem`, production branch `main`).
+- First deployment: https://e520f694.ak-studio-artem.pages.dev/.
+- `ak-studio.pages.dev` served another developer's portfolio. Requesting `akstudio` returned an automatically suffixed address, so the available, readable `ak-studio-artem` name was used instead. The empty trial project was removed after confirming it had no deployments.
+- Root-path production build, TypeScript validation and export check passed: 16 HTML pages and 397 internal references. Branding, canonical URLs, sitemap and absence of GitHub-specific asset paths were checked in the exported HTML.
+- Live browser verification confirmed the new title/wordmark, loaded images, both gameplay videos playing without media errors, the five-item live-product filter, and navigation to ClinicFlow. No browser console errors were reported.
+- The GitHub mirror remains available at its existing address and uses the new primary canonical URL. Cloudflare uses the documented Direct Upload command; the existing GitHub Actions workflow continues to publish the mirror.
+
 ## Build and content
 
 - Production build and TypeScript validation passed with the real GitHub Pages base path, `GITHUB_REPOSITORY=ArtemLuty/ak-games-landing`.

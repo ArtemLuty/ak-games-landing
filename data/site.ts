@@ -1,6 +1,6 @@
 export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://artemluty.github.io/ak-games-landing"
+  "https://ak-studio-artem.pages.dev"
 ).replace(/\/$/, "");
 export const asset = (path: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;

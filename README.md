@@ -2,6 +2,9 @@
 
 Independent developer portfolio for Artem Kolesnikov: released mobile apps, original games and software in daily use.
 
+- Primary website: https://ak-studio-artem.pages.dev/
+- GitHub Pages mirror: https://artemluty.github.io/ak-games-landing/
+
 ## Development
 
 ```sh
@@ -18,6 +21,16 @@ npm run build
 Next.js exports static pages into `out/`. The existing GitHub Actions workflow builds and publishes GitHub Pages on pushes to `main`. `next.config.mjs` sets the repository base path for that build; local development uses `/`. Images use the same base path via the `asset` helper.
 
 `NEXT_PUBLIC_SITE_URL` can override the canonical site URL for a separate hosting build. Set it before building so metadata, social images, the sitemap and robots.txt all reference the intended public address. A Cloudflare Pages build must run without `GITHUB_ACTIONS=true`, so assets and routes start at `/`.
+
+Cloudflare Pages uses Direct Upload. With Wrangler installed and authenticated, publish an update with:
+
+```sh
+GITHUB_ACTIONS=false npm run build
+GITHUB_ACTIONS=false npm run check:export
+wrangler pages deploy out --project-name ak-studio-artem --branch main
+```
+
+Both deployments identify the Cloudflare URL as canonical. Pushing to GitHub updates the GitHub Pages mirror automatically; Cloudflare requires the deployment command above. The older `ak-games.pages.dev` deployment is separate and is not changed by this workflow.
 
 ## Content
 
