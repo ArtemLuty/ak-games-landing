@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "ak-games-landing";
+const repoName =
+  process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "ak-games-landing";
 
 const nextConfig = {
   reactStrictMode: true,
@@ -11,6 +12,9 @@ const nextConfig = {
   },
   basePath: isGithubActions ? `/${repoName}` : "",
   assetPrefix: isGithubActions ? `/${repoName}/` : "",
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubActions ? `/${repoName}` : "",
+  },
 };
 
 export default nextConfig;

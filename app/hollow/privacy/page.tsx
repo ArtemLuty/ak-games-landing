@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { contactDetails } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "HOLLOW: The Last Echo — Privacy Policy | AK Games",
+  alternates: { canonical: "/hollow/privacy/" },
+  title: "HOLLOW: The Last Echo — Privacy Policy",
   description: "Privacy policy for the game HOLLOW: The Last Echo.",
 };
 
@@ -27,30 +28,36 @@ const sections = [
 
 export default function HollowPrivacyPage() {
   return (
-    <div className="section-space">
+    <div className="section-space privacy-page">
       <div className="container-shell">
-        <div className="glass-panel p-8 sm:p-10 lg:p-14">
+        <div className="privacy-inner">
           <div className="max-w-3xl">
             <p className="eyebrow">HOLLOW: The Last Echo</p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
               Privacy Policy
             </h1>
-            <p className="mt-6 text-base leading-8 text-slate-300">Effective October 10, 2026.</p>
+            <p className="mt-6 text-base leading-8 text-slate-300">
+              Effective October 10, 2026.
+            </p>
           </div>
           <div className="mt-12 space-y-6">
             {sections.map((section) => (
-              <section
-                key={section.title}
-                className="rounded-[26px] border border-white/10 bg-white/5 p-6 sm:p-7"
-              >
-                <h2 className="text-xl font-semibold text-white">{section.title}</h2>
-                <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-base">{section.body}</p>
+              <section key={section.title} className="privacy-section">
+                <h2 className="text-xl font-semibold text-white">
+                  {section.title}
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-base">
+                  {section.body}
+                </p>
               </section>
             ))}
-            <section className="rounded-[26px] border border-white/10 bg-white/5 p-6 sm:p-7">
+            <section className="privacy-section">
               <h2 className="text-xl font-semibold text-white">Contact</h2>
               <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-base">
-                <a className="underline" href={`mailto:${contactDetails.email}`}>
+                <a
+                  className="underline"
+                  href={`mailto:${contactDetails.email}`}
+                >
                   {contactDetails.email}
                 </a>
               </p>

@@ -1,47 +1,49 @@
 import Link from "next/link";
-
-import { contactDetails, socialLinks } from "@/data/site";
-
-const footerLinks = [
-  { label: "Projects", href: "/projects" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Contact", href: "/contact" },
-];
-
+import { contactDetails } from "@/data/site";
+import { Arrow, BrandMark } from "./icons";
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/8 py-10">
-      <div className="container-shell flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p className="text-sm text-slate-400">AK Games © 2026</p>
-          <p className="mt-2 max-w-md text-sm leading-6 text-slate-500">
-            Indie mobile apps and games crafted with precision, built for people who value speed,
-            clarity, and thoughtful execution.
-          </p>
-          <Link
-            href={`mailto:${contactDetails.email}`}
-            className="mt-3 inline-block text-sm text-slate-300 transition hover:text-white"
-          >
-            {contactDetails.email}
+    <footer className="site-footer">
+      <div className="container-shell">
+        <div className="footer-top">
+          <Link href="/" className="brand">
+            <BrandMark />
+            <span>AK GAMES</span>
           </Link>
-        </div>
-        <div className="flex flex-wrap gap-4 text-sm text-slate-300">
-          {footerLinks.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-white">
-              {item.label}
-            </Link>
-          ))}
-          {socialLinks.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
+          <p>
+            Independent by choice.
+            <br />
+            Thoughtful by design.
+          </p>
+          <div className="footer-social">
+            <a
+              href={contactDetails.github}
               target="_blank"
-              rel="noreferrer"
-              className="transition hover:text-white"
+              rel="noopener noreferrer"
             >
-              {item.label}
-            </Link>
-          ))}
+              GitHub <Arrow diagonal />
+            </a>
+            <a
+              href={contactDetails.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn <Arrow diagonal />
+            </a>
+            <a
+              href={contactDetails.appStoreDeveloper}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              App Store <Arrow diagonal />
+            </a>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Artem Kolesnikov · AK Games</span>
+          <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
+          <Link href="/privacy">Privacy policy</Link>
+          <a href="#top">Back to top ↑</a>
         </div>
       </div>
     </footer>

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { contactDetails } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "HOLLOW: The Last Echo — Support | AK Games",
+  alternates: { canonical: "/hollow/support/" },
+  title: "HOLLOW: The Last Echo — Support",
   description: "Help and contact for the game HOLLOW: The Last Echo.",
 };
 
@@ -23,9 +24,9 @@ const answers = [
 
 export default function HollowSupportPage() {
   return (
-    <div className="section-space">
+    <div className="section-space privacy-page">
       <div className="container-shell">
-        <div className="glass-panel p-8 sm:p-10 lg:p-14">
+        <div className="privacy-inner">
           <div className="max-w-3xl">
             <p className="eyebrow">HOLLOW: The Last Echo</p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
@@ -41,12 +42,13 @@ export default function HollowSupportPage() {
           </div>
           <div className="mt-12 space-y-6">
             {answers.map((item) => (
-              <section
-                key={item.title}
-                className="rounded-[26px] border border-white/10 bg-white/5 p-6 sm:p-7"
-              >
-                <h2 className="text-xl font-semibold text-white">{item.title}</h2>
-                <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-base">{item.body}</p>
+              <section key={item.title} className="privacy-section">
+                <h2 className="text-xl font-semibold text-white">
+                  {item.title}
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-base">
+                  {item.body}
+                </p>
               </section>
             ))}
           </div>

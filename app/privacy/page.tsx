@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | AK Games",
+  title: "Privacy policy",
   description: "General privacy policy for AK Games mobile apps and products.",
+  alternates: { canonical: "/privacy/" },
 };
 
 const sections = [
@@ -46,28 +48,33 @@ const sections = [
 
 export default function PrivacyPage() {
   return (
-    <div className="section-space">
+    <div className="section-space privacy-page">
       <div className="container-shell">
-        <div className="glass-panel p-8 sm:p-10 lg:p-14">
+        <div className="privacy-inner">
           <div className="max-w-3xl">
             <p className="eyebrow">AK Games Policy</p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
               Privacy Policy
             </h1>
             <p className="mt-6 text-base leading-8 text-slate-300">
-              This is the general privacy policy for AK Games mobile apps and games. Individual
-              apps may differ slightly depending on their features, but this page describes the
-              standard approach used across AK Games products.
+              This is the general privacy policy for AK Games mobile apps and
+              games. Individual apps may differ slightly depending on their
+              features, but this page describes the standard approach used
+              across AK Games products.
             </p>
           </div>
 
+          <p className="mt-8">
+            <Link className="text-link" href="/hollow/privacy">
+              HOLLOW: The Last Echo — app-specific policy ↗
+            </Link>
+          </p>
           <div className="mt-12 space-y-6">
             {sections.map((section) => (
-              <section
-                key={section.title}
-                className="rounded-[26px] border border-white/10 bg-white/5 p-6 sm:p-7"
-              >
-                <h2 className="text-xl font-semibold text-white">{section.title}</h2>
+              <section key={section.title} className="privacy-section">
+                <h2 className="text-xl font-semibold text-white">
+                  {section.title}
+                </h2>
                 <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-base">
                   {section.body}
                 </p>

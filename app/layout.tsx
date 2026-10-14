@@ -1,48 +1,50 @@
 import type { Metadata } from "next";
-
 import "./globals.css";
-
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-
+import { asset, siteUrl } from "@/data/site";
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ak-games.vercel.app"),
-  title: "AK Games — Indie Mobile Apps & Games",
+  metadataBase: new URL(`${siteUrl}/`),
+  title: {
+    default: "AK Games — Thoughtful apps. Memorable play.",
+    template: "%s — AK Games",
+  },
   description:
-    "AK Games is an indie mobile development brand creating games, utility apps, and experimental products with Flutter.",
-  keywords: [
-    "Flutter developer",
-    "indie games",
-    "mobile apps",
-    "AK Games",
-    "mobile development",
-    "App Store games",
-  ],
+    "Independent developer Artem Kolesnikov creates thoughtful mobile apps, original games and practical digital products. Explore the work and start a collaboration.",
+  alternates: { canonical: `${siteUrl}/` },
   openGraph: {
-    title: "AK Games — Indie Mobile Apps & Games",
+    title: "AK Games — Thoughtful apps. Memorable play.",
     description:
-      "AK Games creates polished mobile games, utility apps, and experimental products with Flutter.",
+      "Mobile apps, original games and product development by Artem Kolesnikov.",
     siteName: "AK Games",
     type: "website",
+    url: siteUrl,
+    images: [
+      {
+        url: `${siteUrl}/projects/hollow-cover.jpg`,
+        width: 1800,
+        height: 581,
+        alt: "HOLLOW, an original game by AK Games",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AK Games — Indie Mobile Apps & Games",
-    description:
-      "AK Games creates polished mobile games, utility apps, and experimental products with Flutter.",
+    title: "AK Games — Thoughtful apps. Memorable play.",
   },
+  icons: { icon: asset("/favicon.svg") },
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      <body id="top">
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         <SiteHeader />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <SiteFooter />
       </body>
     </html>
