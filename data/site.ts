@@ -1,6 +1,5 @@
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://ak-studio-artem.pages.dev"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ak-studio-artem.pages.dev"
 ).replace(/\/$/, "");
 export const asset = (path: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -18,6 +17,7 @@ export type Project = {
   status:
     | "Released"
     | "In development"
+    | "Submitted to App Store"
     | "Release preparation"
     | "Live in clinics";
   releaseNote?: string;
@@ -30,12 +30,56 @@ export type Project = {
   appStore?: string;
   github?: string;
   image?: string;
+  imageAlt?: string;
   icon?: string;
   screenshots?: string[];
-  video?: { src: string; poster: string; caption: string; description: string };
+  screenshotFormat?: "portrait";
+  video?: {
+    src: string;
+    poster: string;
+    caption: string;
+    description: string;
+    format?: "portrait";
+  };
   visual?: "phones" | "workflow" | "audio";
 };
 export const projects: Project[] = [
+  {
+    slug: "afterself",
+    title: "AFTERSELF",
+    category: "Game",
+    status: "Submitted to App Store",
+    releaseNote: "Submitted for App Store review · iPhone & iPad",
+    color: "neon",
+    tagline: "Outrun your own ghosts.",
+    description:
+      "A one-thumb neon arcade game where every completed run returns as a ghost of your own movements.",
+    overview:
+      "Collect three orbs in fifteen seconds. Then face the path you just took: every completed round becomes a ghost, replaying your exact movements in the rounds that follow. Dashes, pulse mines, rewind orbs and closing walls turn a simple arena into a test of your own decisions. Built for short sessions on iPhone and iPad, AFTERSELF includes an endless mode and a shared daily challenge. Version 1.0 has been submitted to Apple for review.",
+    tech: ["Godot 4", "GDScript", "Game Center"],
+    features: [
+      "One-thumb movement and ghosts that replay your exact paths",
+      "Dashes, pulse mines, rewind orbs and shrinking walls",
+      "Endless play and a daily challenge with Game Center leaderboards",
+      "Offline core gameplay, without ads or a required game account",
+      "English and Ukrainian, reduced motion and a colour-blind palette",
+    ],
+    image: "/projects/afterself-cover.jpg",
+    imageAlt: "AFTERSELF title and colourful ghost trails on a dark neon arena",
+    screenshotFormat: "portrait",
+    screenshots: [
+      "/projects/afterself-gameplay-1.jpg",
+      "/projects/afterself-gameplay-2.jpg",
+    ],
+    video: {
+      src: "/projects/afterself-gameplay.mp4",
+      poster: "/projects/afterself-video-poster.jpg",
+      caption: "Every path comes back.",
+      description:
+        "A glowing player collects orbs in a neon arena while colourful ghosts replay earlier movements. More trails and pulse mines fill the arena as rounds progress. Silent excerpt from recorded AFTERSELF gameplay.",
+      format: "portrait",
+    },
+  },
   {
     slug: "hollow",
     title: "HOLLOW: The Last Echo",
@@ -56,6 +100,8 @@ export const projects: Project[] = [
       "Keyboard, gamepad and touch controls",
     ],
     image: "/projects/hollow-cover.jpg",
+    imageAlt:
+      "HOLLOW’s forest keeper beneath a glowing tree in a misty woodland",
     screenshots: ["/projects/hollow-gameplay.jpg"],
     video: {
       src: "/projects/hollow-gameplay.mp4",
@@ -200,6 +246,8 @@ export const projects: Project[] = [
       "Linked campaign chapters and replayable skirmishes",
     ],
     image: "/projects/ashveil.jpg",
+    imageAlt:
+      "ASHVEIL strategic map with a company exploring a dark fantasy realm",
     screenshots: ["/projects/ashveil.jpg"],
     video: {
       src: "/projects/ashveil-gameplay.mp4",
@@ -233,7 +281,10 @@ export const projects: Project[] = [
 export const releasedProjects = projects.filter((p) => p.status === "Released");
 export const isLiveProject = (p: Project) =>
   p.status === "Released" || p.status === "Live in clinics";
-export const gameplayProjects = projects.filter((p) => p.video);
+export const spotlightProject = projects.find((p) => p.slug === "afterself")!;
+export const gameplayProjects = projects.filter(
+  (p) => p.video && p.slug !== spotlightProject.slug,
+);
 export const selectedProjects = [
   "hollow",
   "clinicflow",

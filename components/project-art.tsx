@@ -12,11 +12,7 @@ export function ProjectArt({
       {project.image ? (
         <Image
           src={asset(project.image)}
-          alt={
-            project.slug === "hollow"
-              ? "HOLLOW’s forest keeper beneath a glowing tree in a misty woodland"
-              : "ASHVEIL strategic map with a company exploring a dark fantasy realm"
-          }
+          alt={project.imageAlt ?? `${project.title} project artwork`}
           width={1600}
           height={900}
           priority={priority}

@@ -4,6 +4,7 @@ import { Arrow } from "@/components/icons";
 import { ProjectCard } from "@/components/project-card";
 import { CollaborationCTA } from "@/components/collaboration-cta";
 import { GameplayShowcase } from "@/components/gameplay-showcase";
+import { ProjectSpotlight } from "@/components/project-spotlight";
 import {
   asset,
   projects,
@@ -122,6 +123,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <ProjectSpotlight />
       <section className="work-section container-shell" id="work">
         <div className="section-heading">
           <div>

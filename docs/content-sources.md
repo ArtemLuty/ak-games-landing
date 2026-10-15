@@ -1,5 +1,14 @@
 # Portfolio content sources
 
+## AFTERSELF addition — October 15, 2026
+
+- Identified the recent game from the owner's `Publish Echo Run to App Store` chat and the local `afterself` project. Its submitted product name is AFTERSELF.
+- `afterself/store/appstore/submission_status.json` records the successful October 14 submission of version 1.0.0, with Apple showing Waiting for Review. The official Apple Lookup API returned no public result for app 6822606708 in the US or Ukrainian storefront on October 15. The portfolio says Submitted to App Store, adds no unverified download link, and keeps the released-app count at four.
+- Product mechanics and accessibility features are summarized from the project's README and submitted store listing. No account details or operational submission records are copied into the public page.
+- Artwork: the owner's existing `store/feature_graphic.png`, converted to JPEG. Two actual gameplay screenshots from `store/screenshots/1_hero_1290x2796_en.png` and `3_mines_1290x2796_en.png`, resized to 1400px high and compressed for the web.
+- Video: a silent 20-second excerpt starting at 00:12 in `store/video/AFTERSELF_gameplay.mp4`, H.264 at 540 × 960, 24fps, CRF 27, fast-start. The poster is the first frame of that excerpt. The full portrait frame is preserved.
+- AFTERSELF has a dedicated homepage spotlight, a catalogue entry and a detail page. HOLLOW and ASHVEIL retain their existing screenshots and videos. The existing player supplies manual controls, offscreen pausing and reduced-motion/data-saving behavior.
+
 Verified October 13, 2026. This file records editorial provenance; operational conversations and account details are not site content.
 
 ## Public releases

@@ -44,3 +44,5 @@ The catalogue provides category filtering and text search. The contact form prep
 The website supports keyboard navigation, visible focus states, a skip link, reduced motion, mobile navigation, route metadata, a sitemap and robots.txt. Existing privacy policy wording is retained apart from the AK Studio brand name.
 
 HOLLOW and ASHVEIL each have separate screenshots and a gameplay video, both on the homepage showcase and their own project page. Videos start muted when visible, pause offscreen, respect manual pause, and do not autoplay with reduced motion or data saving enabled. Native controls, a keyboard-accessible play/pause button and text descriptions remain available. No third-party video embed or tracking is used.
+
+AFTERSELF appears in the homepage's latest-project spotlight, the catalogue and its own detail page, with a portrait gameplay video and two real screenshots. Its App Store submission is distinguished from a public release; add a download link only after confirming the live listing.

@@ -36,6 +36,8 @@ export function generateMetadata({
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const p = projects.find((p) => p.slug === params.slug);
   if (!p) notFound();
+  const portraitScreenshots =
+    p.visual === "phones" || p.screenshotFormat === "portrait";
   return (
     <>
       <section className="detail-intro container-shell">
@@ -151,20 +153,20 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             A CLOSER LOOK /{" "}
             {p.status === "Released"
               ? "APP STORE SCREENSHOTS"
-              : p.slug === "hollow"
+              : p.slug === "hollow" || p.slug === "afterself"
                 ? "GAMEPLAY SCREENSHOTS"
                 : "DEVELOPMENT BUILD"}
           </p>
           <div
-            className={`screenshot-gallery ${p.visual === "phones" ? "portrait-gallery" : ""}`}
+            className={`screenshot-gallery ${portraitScreenshots ? "portrait-gallery" : ""}`}
           >
             {p.screenshots.map((s, i) => (
               <Image
                 key={s}
                 src={asset(s)}
                 alt={`${p.title} ${p.visual === "phones" ? "app" : "gameplay"} screenshot ${i + 1}`}
-                width={p.visual === "phones" ? 240 : 1600}
-                height={p.visual === "phones" ? 520 : 900}
+                width={portraitScreenshots ? 646 : 1600}
+                height={portraitScreenshots ? 1400 : 900}
               />
             ))}
           </div>

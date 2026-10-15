@@ -1,5 +1,15 @@
 # Portfolio update verification — October 13, 2026
 
+## AFTERSELF addition — October 15, 2026
+
+- Root-host production build and TypeScript validation passed. Export checker: 17 HTML pages, 432 internal route and asset references, no missing targets.
+- Added the ninth project with Submitted to App Store status; four released apps and five live products remain unchanged. Apple public lookup returned no entry in US/UA on the verification date.
+- Homepage spotlight includes a separate screenshot and a 20-second portrait gameplay recording. The detail page has two portrait screenshots, preserved cover artwork and the same controllable player.
+- Browser inspection at 320, 375, 768, 1024 and 1280px showed no horizontal overflow. Mobile screenshots and controls remain visible without cropping the game frame.
+- AFTERSELF playback reached readyState 4 and progressed without media errors; the custom pause control paused it. Existing HOLLOW and ASHVEIL players remain present and initially paused offscreen.
+- Catalogue contains nine projects, six games and five live products. AFTERSELF search returns exactly one result; it is excluded from the Live products filter. Its direct detail route and canonical URL are correct.
+- No browser console errors were reported. `git diff --check` passed.
+
 ## AK Studio rename
 
 - Renamed the header, footer, studio introduction, catalogue, privacy branding and page/social metadata to AK Studio.

@@ -65,7 +65,9 @@ export function GameplayVideo({ project }: { project: Project }) {
   if (!project.video) return null;
   const clip = project.video;
   return (
-    <figure className="gameplay-player">
+    <figure
+      className={`gameplay-player${clip.format === "portrait" ? " portrait-player" : ""}`}
+    >
       <div className="gameplay-screen">
         <video
           ref={video}
